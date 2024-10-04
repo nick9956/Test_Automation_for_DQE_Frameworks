@@ -1,0 +1,332 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.1 (Python 3.12.4 on win32)" generated="2024-10-04T14:28:45.428526" rpa="false" schemaversion="5">
+<suite id="s1" name="Tests" source="C:\Users\Mykola_Rudym\Documents\Data_quality\Test Automation - Frameworks\Project\tests">
+<suite id="s1-s1" name="CountTests" source="C:\Users\Mykola_Rudym\Documents\Data_quality\Test Automation - Frameworks\Project\tests\CountTests.robot">
+<kw name="Connect To Database" owner="DatabaseLibrary" type="SETUP">
+<msg time="2024-10-04T14:28:45.561989" level="INFO">Connected to database successfully
+&lt;pyodbc.Connection object at 0x0000021DA52581D0&gt; &lt;pyodbc.Cursor object at 0x0000021DA52D2530&gt;</msg>
+<status status="PASS" start="2024-10-04T14:28:45.485087" elapsed="0.076902"/>
+</kw>
+<test id="s1-s1-t1" name="Check Count in Countries Column" line="12">
+<kw name="Check Table Count">
+<kw name="Replace String" owner="String">
+<msg time="2024-10-04T14:28:45.570040" level="INFO">${query} = SELECT COUNT(country_name) FROM hr.%TABLE_NAME%</msg>
+<var>${query}</var>
+<arg>${DB_QUERY_COUNT}</arg>
+<arg>%COLUMN_NAME%</arg>
+<arg>${column_name}</arg>
+<doc>Replaces ``search_for`` in the given ``string`` with ``replace_with``.</doc>
+<status status="PASS" start="2024-10-04T14:28:45.561989" elapsed="0.008051"/>
+</kw>
+<kw name="Replace String" owner="String">
+<msg time="2024-10-04T14:28:45.570040" level="INFO">${query} = SELECT COUNT(country_name) FROM hr.countries</msg>
+<var>${query}</var>
+<arg>${query}</arg>
+<arg>%TABLE_NAME%</arg>
+<arg>${table_name}</arg>
+<doc>Replaces ``search_for`` in the given ``string`` with ``replace_with``.</doc>
+<status status="PASS" start="2024-10-04T14:28:45.570040" elapsed="0.000000"/>
+</kw>
+<kw name="Execute Query" owner="DatabaseLibrary">
+<msg time="2024-10-04T14:28:45.570040" level="INFO">${result} = [(25,)]</msg>
+<var>${result}</var>
+<arg>${query}</arg>
+<status status="PASS" start="2024-10-04T14:28:45.570040" elapsed="0.000000"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2024-10-04T14:28:45.570040" level="INFO">[(25,)]</msg>
+<arg>${result}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2024-10-04T14:28:45.570040" elapsed="0.000000"/>
+</kw>
+<kw name="Should Be Equal As Numbers" owner="BuiltIn">
+<msg time="2024-10-04T14:28:45.570040" level="INFO">Argument types are:
+&lt;class 'int'&gt;
+&lt;class 'str'&gt;</msg>
+<arg>${result[0][0]}</arg>
+<arg>${expected_count}</arg>
+<doc>Fails if objects are unequal after converting them to real numbers.</doc>
+<status status="PASS" start="2024-10-04T14:28:45.570040" elapsed="0.000000"/>
+</kw>
+<arg>country_name</arg>
+<arg>countries</arg>
+<arg>25</arg>
+<status status="PASS" start="2024-10-04T14:28:45.561989" elapsed="0.008051"/>
+</kw>
+<status status="PASS" start="2024-10-04T14:28:45.561989" elapsed="0.008051"/>
+</test>
+<test id="s1-s1-t2" name="Check Count in Employees Column" line="13">
+<kw name="Check Table Count">
+<kw name="Replace String" owner="String">
+<msg time="2024-10-04T14:28:45.570040" level="INFO">${query} = SELECT COUNT(employee_id) FROM hr.%TABLE_NAME%</msg>
+<var>${query}</var>
+<arg>${DB_QUERY_COUNT}</arg>
+<arg>%COLUMN_NAME%</arg>
+<arg>${column_name}</arg>
+<doc>Replaces ``search_for`` in the given ``string`` with ``replace_with``.</doc>
+<status status="PASS" start="2024-10-04T14:28:45.570040" elapsed="0.000000"/>
+</kw>
+<kw name="Replace String" owner="String">
+<msg time="2024-10-04T14:28:45.570040" level="INFO">${query} = SELECT COUNT(employee_id) FROM hr.employees</msg>
+<var>${query}</var>
+<arg>${query}</arg>
+<arg>%TABLE_NAME%</arg>
+<arg>${table_name}</arg>
+<doc>Replaces ``search_for`` in the given ``string`` with ``replace_with``.</doc>
+<status status="PASS" start="2024-10-04T14:28:45.570040" elapsed="0.000000"/>
+</kw>
+<kw name="Execute Query" owner="DatabaseLibrary">
+<msg time="2024-10-04T14:28:45.570040" level="INFO">${result} = [(40,)]</msg>
+<var>${result}</var>
+<arg>${query}</arg>
+<status status="PASS" start="2024-10-04T14:28:45.570040" elapsed="0.000000"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2024-10-04T14:28:45.570040" level="INFO">[(40,)]</msg>
+<arg>${result}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2024-10-04T14:28:45.570040" elapsed="0.000000"/>
+</kw>
+<kw name="Should Be Equal As Numbers" owner="BuiltIn">
+<msg time="2024-10-04T14:28:45.578038" level="INFO">Argument types are:
+&lt;class 'int'&gt;
+&lt;class 'str'&gt;</msg>
+<arg>${result[0][0]}</arg>
+<arg>${expected_count}</arg>
+<doc>Fails if objects are unequal after converting them to real numbers.</doc>
+<status status="PASS" start="2024-10-04T14:28:45.570040" elapsed="0.007998"/>
+</kw>
+<arg>employee_id</arg>
+<arg>employees</arg>
+<arg>40</arg>
+<status status="PASS" start="2024-10-04T14:28:45.570040" elapsed="0.007998"/>
+</kw>
+<status status="PASS" start="2024-10-04T14:28:45.570040" elapsed="0.007998"/>
+</test>
+<test id="s1-s1-t3" name="Check Count in Locations Column" line="14">
+<kw name="Check Table Count">
+<kw name="Replace String" owner="String">
+<msg time="2024-10-04T14:28:45.578038" level="INFO">${query} = SELECT COUNT(postal_code) FROM hr.%TABLE_NAME%</msg>
+<var>${query}</var>
+<arg>${DB_QUERY_COUNT}</arg>
+<arg>%COLUMN_NAME%</arg>
+<arg>${column_name}</arg>
+<doc>Replaces ``search_for`` in the given ``string`` with ``replace_with``.</doc>
+<status status="PASS" start="2024-10-04T14:28:45.578038" elapsed="0.000000"/>
+</kw>
+<kw name="Replace String" owner="String">
+<msg time="2024-10-04T14:28:45.578038" level="INFO">${query} = SELECT COUNT(postal_code) FROM hr.locations</msg>
+<var>${query}</var>
+<arg>${query}</arg>
+<arg>%TABLE_NAME%</arg>
+<arg>${table_name}</arg>
+<doc>Replaces ``search_for`` in the given ``string`` with ``replace_with``.</doc>
+<status status="PASS" start="2024-10-04T14:28:45.578038" elapsed="0.000000"/>
+</kw>
+<kw name="Execute Query" owner="DatabaseLibrary">
+<msg time="2024-10-04T14:28:45.578038" level="INFO">${result} = [(6,)]</msg>
+<var>${result}</var>
+<arg>${query}</arg>
+<status status="PASS" start="2024-10-04T14:28:45.578038" elapsed="0.000000"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2024-10-04T14:28:45.578038" level="INFO">[(6,)]</msg>
+<arg>${result}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2024-10-04T14:28:45.578038" elapsed="0.000000"/>
+</kw>
+<kw name="Should Be Equal As Numbers" owner="BuiltIn">
+<msg time="2024-10-04T14:28:45.578038" level="INFO">Argument types are:
+&lt;class 'int'&gt;
+&lt;class 'str'&gt;</msg>
+<arg>${result[0][0]}</arg>
+<arg>${expected_count}</arg>
+<doc>Fails if objects are unequal after converting them to real numbers.</doc>
+<status status="PASS" start="2024-10-04T14:28:45.578038" elapsed="0.000000"/>
+</kw>
+<arg>postal_code</arg>
+<arg>locations</arg>
+<arg>6</arg>
+<status status="PASS" start="2024-10-04T14:28:45.578038" elapsed="0.000000"/>
+</kw>
+<status status="PASS" start="2024-10-04T14:28:45.578038" elapsed="0.000000"/>
+</test>
+<kw name="Disconnect From Database" owner="DatabaseLibrary" type="TEARDOWN">
+<msg time="2024-10-04T14:28:45.584590" level="INFO">Disconnected from database</msg>
+<status status="PASS" start="2024-10-04T14:28:45.584225" elapsed="0.000365"/>
+</kw>
+<status status="PASS" start="2024-10-04T14:28:45.459941" elapsed="0.124649"/>
+</suite>
+<suite id="s1-s2" name="MinValueNumbersTests" source="C:\Users\Mykola_Rudym\Documents\Data_quality\Test Automation - Frameworks\Project\tests\MinValueNumbersTests.robot">
+<kw name="Connect To Database" owner="DatabaseLibrary" type="SETUP">
+<msg time="2024-10-04T14:28:45.591195" level="INFO">Connected to database successfully
+&lt;pyodbc.Connection object at 0x0000021DA525A800&gt; &lt;pyodbc.Cursor object at 0x0000021DA52876B0&gt;</msg>
+<status status="PASS" start="2024-10-04T14:28:45.584590" elapsed="0.006605"/>
+</kw>
+<test id="s1-s2-t1" name="Check Min Value In max_salary Column" line="12">
+<kw name="Check Numbers Min Value In Column">
+<kw name="Replace String" owner="String">
+<msg time="2024-10-04T14:28:45.591195" level="INFO">${query} = SELECT MIN(max_salary) FROM hr.%TABLE_NAME%</msg>
+<var>${query}</var>
+<arg>${DB_QUERY_MIN}</arg>
+<arg>%COLUMN_NAME%</arg>
+<arg>${column_name}</arg>
+<doc>Replaces ``search_for`` in the given ``string`` with ``replace_with``.</doc>
+<status status="PASS" start="2024-10-04T14:28:45.591195" elapsed="0.000000"/>
+</kw>
+<kw name="Replace String" owner="String">
+<msg time="2024-10-04T14:28:45.591195" level="INFO">${query} = SELECT MIN(max_salary) FROM hr.jobs</msg>
+<var>${query}</var>
+<arg>${query}</arg>
+<arg>%TABLE_NAME%</arg>
+<arg>${table_name}</arg>
+<doc>Replaces ``search_for`` in the given ``string`` with ``replace_with``.</doc>
+<status status="PASS" start="2024-10-04T14:28:45.591195" elapsed="0.000000"/>
+</kw>
+<kw name="Execute Query" owner="DatabaseLibrary">
+<msg time="2024-10-04T14:28:45.591195" level="INFO">${result} = [(Decimal('5000.00'),)]</msg>
+<var>${result}</var>
+<arg>${query}</arg>
+<status status="PASS" start="2024-10-04T14:28:45.591195" elapsed="0.000000"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2024-10-04T14:28:45.591195" level="INFO">[(Decimal('5000.00'),)]</msg>
+<arg>${result}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2024-10-04T14:28:45.591195" elapsed="0.000000"/>
+</kw>
+<kw name="Should Be Equal As Numbers" owner="BuiltIn">
+<msg time="2024-10-04T14:28:45.596837" level="INFO">Argument types are:
+&lt;class 'decimal.Decimal'&gt;
+&lt;class 'str'&gt;</msg>
+<arg>${result[0][0]}</arg>
+<arg>${expected_min_value}</arg>
+<doc>Fails if objects are unequal after converting them to real numbers.</doc>
+<status status="PASS" start="2024-10-04T14:28:45.591195" elapsed="0.005642"/>
+</kw>
+<arg>max_salary</arg>
+<arg>jobs</arg>
+<arg>5000.00</arg>
+<status status="PASS" start="2024-10-04T14:28:45.591195" elapsed="0.005642"/>
+</kw>
+<status status="PASS" start="2024-10-04T14:28:45.591195" elapsed="0.005642"/>
+</test>
+<test id="s1-s2-t2" name="Check Min Value In employee_id Column" line="13">
+<kw name="Check Numbers Min Value In Column">
+<kw name="Replace String" owner="String">
+<msg time="2024-10-04T14:28:45.596837" level="INFO">${query} = SELECT MIN(employee_id) FROM hr.%TABLE_NAME%</msg>
+<var>${query}</var>
+<arg>${DB_QUERY_MIN}</arg>
+<arg>%COLUMN_NAME%</arg>
+<arg>${column_name}</arg>
+<doc>Replaces ``search_for`` in the given ``string`` with ``replace_with``.</doc>
+<status status="PASS" start="2024-10-04T14:28:45.596837" elapsed="0.000000"/>
+</kw>
+<kw name="Replace String" owner="String">
+<msg time="2024-10-04T14:28:45.596837" level="INFO">${query} = SELECT MIN(employee_id) FROM hr.employees</msg>
+<var>${query}</var>
+<arg>${query}</arg>
+<arg>%TABLE_NAME%</arg>
+<arg>${table_name}</arg>
+<doc>Replaces ``search_for`` in the given ``string`` with ``replace_with``.</doc>
+<status status="PASS" start="2024-10-04T14:28:45.596837" elapsed="0.000000"/>
+</kw>
+<kw name="Execute Query" owner="DatabaseLibrary">
+<msg time="2024-10-04T14:28:45.601169" level="INFO">${result} = [(100,)]</msg>
+<var>${result}</var>
+<arg>${query}</arg>
+<status status="PASS" start="2024-10-04T14:28:45.596837" elapsed="0.004332"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2024-10-04T14:28:45.601367" level="INFO">[(100,)]</msg>
+<arg>${result}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2024-10-04T14:28:45.601367" elapsed="0.000332"/>
+</kw>
+<kw name="Should Be Equal As Numbers" owner="BuiltIn">
+<msg time="2024-10-04T14:28:45.601699" level="INFO">Argument types are:
+&lt;class 'int'&gt;
+&lt;class 'str'&gt;</msg>
+<arg>${result[0][0]}</arg>
+<arg>${expected_min_value}</arg>
+<doc>Fails if objects are unequal after converting them to real numbers.</doc>
+<status status="PASS" start="2024-10-04T14:28:45.601699" elapsed="0.000000"/>
+</kw>
+<arg>employee_id</arg>
+<arg>employees</arg>
+<arg>100</arg>
+<status status="PASS" start="2024-10-04T14:28:45.596837" elapsed="0.004862"/>
+</kw>
+<status status="PASS" start="2024-10-04T14:28:45.596837" elapsed="0.004862"/>
+</test>
+<test id="s1-s2-t3" name="Check Min Value In department_id Column" line="14">
+<kw name="Check Numbers Min Value In Column">
+<kw name="Replace String" owner="String">
+<msg time="2024-10-04T14:28:45.603870" level="INFO">${query} = SELECT MIN(department_id) FROM hr.%TABLE_NAME%</msg>
+<var>${query}</var>
+<arg>${DB_QUERY_MIN}</arg>
+<arg>%COLUMN_NAME%</arg>
+<arg>${column_name}</arg>
+<doc>Replaces ``search_for`` in the given ``string`` with ``replace_with``.</doc>
+<status status="PASS" start="2024-10-04T14:28:45.603870" elapsed="0.000000"/>
+</kw>
+<kw name="Replace String" owner="String">
+<msg time="2024-10-04T14:28:45.603870" level="INFO">${query} = SELECT MIN(department_id) FROM hr.departments</msg>
+<var>${query}</var>
+<arg>${query}</arg>
+<arg>%TABLE_NAME%</arg>
+<arg>${table_name}</arg>
+<doc>Replaces ``search_for`` in the given ``string`` with ``replace_with``.</doc>
+<status status="PASS" start="2024-10-04T14:28:45.603870" elapsed="0.000000"/>
+</kw>
+<kw name="Execute Query" owner="DatabaseLibrary">
+<msg time="2024-10-04T14:28:45.607375" level="INFO">${result} = [(1,)]</msg>
+<var>${result}</var>
+<arg>${query}</arg>
+<status status="PASS" start="2024-10-04T14:28:45.603870" elapsed="0.003505"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2024-10-04T14:28:45.607511" level="INFO">[(1,)]</msg>
+<arg>${result}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2024-10-04T14:28:45.607511" elapsed="0.000000"/>
+</kw>
+<kw name="Should Be Equal As Numbers" owner="BuiltIn">
+<msg time="2024-10-04T14:28:45.607511" level="INFO">Argument types are:
+&lt;class 'int'&gt;
+&lt;class 'str'&gt;</msg>
+<arg>${result[0][0]}</arg>
+<arg>${expected_min_value}</arg>
+<doc>Fails if objects are unequal after converting them to real numbers.</doc>
+<status status="PASS" start="2024-10-04T14:28:45.607511" elapsed="0.000000"/>
+</kw>
+<arg>department_id</arg>
+<arg>departments</arg>
+<arg>1</arg>
+<status status="PASS" start="2024-10-04T14:28:45.603510" elapsed="0.004001"/>
+</kw>
+<status status="PASS" start="2024-10-04T14:28:45.601699" elapsed="0.005812"/>
+</test>
+<kw name="Disconnect From Database" owner="DatabaseLibrary" type="TEARDOWN">
+<msg time="2024-10-04T14:28:45.609980" level="INFO">Disconnected from database</msg>
+<status status="PASS" start="2024-10-04T14:28:45.607511" elapsed="0.002469"/>
+</kw>
+<status status="PASS" start="2024-10-04T14:28:45.584590" elapsed="0.025390"/>
+</suite>
+<status status="PASS" start="2024-10-04T14:28:45.441288" elapsed="0.168692"/>
+</suite>
+<statistics>
+<total>
+<stat pass="6" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="6" fail="0" skip="0" id="s1" name="Tests">Tests</stat>
+<stat pass="3" fail="0" skip="0" id="s1-s1" name="CountTests">Tests.CountTests</stat>
+<stat pass="3" fail="0" skip="0" id="s1-s2" name="MinValueNumbersTests">Tests.MinValueNumbersTests</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>

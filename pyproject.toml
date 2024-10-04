@@ -1,0 +1,18 @@
+[tool.poetry]
+name = "dqe-frameworks"
+version = "0.1.0"
+description = "DQE_Test_Automation_Frameworks"
+authors = ["mykola_rudym@epam.com"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.12"
+robotframework = "^7.1"
+robotframework-databaselibrary = "^2.0.2"
+pyodbc = "^5.1.0" 
+robotframework-reportportal = "^5.5.6"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
